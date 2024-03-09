@@ -193,18 +193,11 @@
         var emailRegex = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+)@([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
         var passwordRegex =
           /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
-        if (
-          username.match(usernameRegex) != null &&
-          email.match(emailRegex) != null &&
-          password.match(passwordRegex) != null
-        ) {
+        if (username.match(usernameRegex) != null &&  email.match(emailRegex) != null && password.match(passwordRegex) != null) {
           alert("Login successful! Welcome " + username);
           return;
-        } else if (
-          username.match(usernameRegex) == null &&
-          email.match(emailRegex) == null &&
-          password.match(passwordRegex) == null
-        ) {
+        } 
+        else if (username.match(usernameRegex) == null && email.match(emailRegex) == null && password.match(passwordRegex) == null) {
           alert("Please enter a valid values for all the fields");
           return;
         } else {
