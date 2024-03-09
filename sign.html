@@ -1,73 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Form</title>
-<style>
-     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-     .container {
-      background-color: #f1f1f1;
-      padding: 20px;
-      border-radius: 5px;
-      width: 500px;
-      margin: 0 auto;
-    }
-    label {
-     display: block;
-     margin-bottom: 5px;
-    }
-    input[type="text"],
-    textarea {
-     width: 100%;
-     padding: 10px;
-     border: 1px solid #ccc;
-     border-radius: 3px;
-     box-sizing: border-box;
-     margin-bottom: 15px;
-    }
-    textarea {
-     height: 150px;
-    }
-    .submit-button {
-     background-color: #4CAF50; /* Green */
-     border: none;
-     color: white;
-     padding: 10px 20px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     font-size: 16px;
-     margin-top: 10px;
-     cursor: pointer;
-     border-radius: 5px;
-    }
-    .submit-button:hover {
-     background-color: #45a049;
-    }
- </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <title>Sign Up</title>
+  <style>
+    <style>
+      body {
+        background-color: whitesmoke;
+        font-weight: bold;
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .cd {
+        width: 500px;
+        height: 750px;
+        background-color: cornsilk;
+        text-align: center;
+        margin: 45px auto;
+        font-family: Calibri;
+        border-radius: 30px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 21px;
+        color: chocolate;
+        border-radius: 20px;
+        background: cornsilk;
+        box-shadow: -50px 50px 67px #868686, 50px -50px 67px #868686;
+      }
+
+      #a1,
+      #b,
+      #c {
+        border-radius: 10px;
+        padding-bottom: 10px;
+        width: 250px;
+        height: 22px;
+        border-color: #b16610;
+        margin-bottom: 25px;
+      }
+      #d {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        width: 120px;
+        height: 40px;
+        line-height: 16px;
+        padding: 4px;
+        border-radius: 20px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        background-image: linear-gradient(
+          to right,
+          rgb(95, 89, 6) 0%,
+          rgb(100, 94, 11) 50%,
+          rgb(92, 87, 14) 100%
+        );
+        box-shadow: rgba(0, 0, 0, 0.884) 5px 5px 15px 3px;
+        border: 2px solid rgb(95, 89, 6);
+        display: inline-block;
+      }
+
+      #d:hover {
+        background: rgb(255, 239, 22);
+      }
+
+      #d:active {
+        background: rgb(95, 89, 6);
+      }
+
+      h1 {
+        color: chocolate;
+        text-shadow: 2px 2px 2px rgb(95, 89, 6);
+      }
+
+      span {
+        margin-top: 0;
+        font-size: 20px;
+      }
+      label {
+        margin-left: -40px;
+      }
+      input {
+        margin-right: -50px;
+      }
+      p {
+        margin-top: 90px;
+        font-size: 20px;
+      }
+      #e {
+        text-decoration: none;
+        color: rgb(95, 89, 6);
+        margin-top: 0px;
+        font-size: 20px;
+      }
+      #bt {
+        margin-top: -50px;
+        margin-bottom: 40px;
+      }
+      .password-criteria {
+        display: none;
+      }
+      .password-criteria input[type="checkbox"] {
+        margin-right: 5px;
+      }
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: large;
+      }
+
+      .dropdown-menu li {
+        padding: 10px;
+        
+      }
+
+      .dropdown-menu li:last-child {
+        border-bottom: none;
+      }
+      .dropdown-menu a{
+        color: rgb(247, 107, 130);
+      }
+      .dropdown:hover .dropdown-menu {
+        display: block;
+        
+      }
+    </style>
+  </style>
 </head>
 <body>
- <div class="container">
-  <h1>Contact Us</h1>
-  <form action="/submit_form" method="post"> <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email Address:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="phone">Telephone:</label>
-    <input type="tel" id="phone" name="phone" required>
-    <label for="enquiry">Enquiry:</label>
-    <input type="text" id="enquiry" name="enquiry" required>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-    <label for="additional">Additional Information (Optional):</label>
-    <input type="text" id="additional" name="additional">
-    <button type="submit" class="submit-button">Submit</button>
-  </form>
- </div>
+  <div class="cd">
+    <h1>Create an account</h1>
+    <form id="contactForm">
+      <label for="name">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="name" name="name" required /><br />
+      <span id="name-error"></span><br />
+
+      <label for="email">Email Address:&nbsp;&nbsp;</label>
+      <input type="email" id="email" name="email" required /><br />
+      <span id="email-error"></span><br />
+
+      <label for="phone">Telephone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="tel" id="phone" name="phone" required /><br />
+      <span id="phone-error"></span><br />
+
+      <label for="age">Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="age" name="age" required /><br />
+      <span id="age-error"></span><br />
+      
+      <label for="gender">Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <div class="dropdown">
+      <input type="text" id="b" name="gender" /><br />
+      <ul class="dropdown-menu">
+          <li><Male</li>
+          <li>My Female</li>
+          <li>Others</li>
+        </ul>
+      </div>
+      <span id="gender-error"></span><br />
+
+      <label for="password">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="password" id="password" onkeyup="showPasswordCriteria()">
+      <div class="password-criteria">
+        <input type="checkbox" id="uppercase" /> Uppercase letter<br />
+        <input type="checkbox" id="lowercase" /> Lowercase letter<br />
+        <input type="checkbox" id="number" /> Number<br />
+        <input type="checkbox" id="symbol" /> Special symbol (@, !, $, %, etc.)<br />
+        <span id="password-error"></span>
+      </div>
+      <br /><br />
+
+      <button type="submit" class="submit-button" id="d" onclick="return validateForm()">Sign up</button
+      ><br />
+    </form>
+    <div id="bt">
+      <p><a href="lg3.html" id="e">Go back to login</a></p>
+    </div>
+  </div>
+  <script>
+    // Include your JavaScript functions here (refer to the provided JavaScript below)
+    // Function to show the gender dropdown menu
+function showGenderMenu() {
+  const genderSelect = document.getElementById("gender-select");
+  genderSelect.classList.toggle("show");
+}
+
+// Function to validate the form on submit
+function validateForm() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const age = document.getElementById("age").value;
+  const gender = document.getElementById("gender-text").value;
+  const password = document.getElementById("password").value;
+  const uppercase = document.getElementById("uppercase").checked;
+  const lowercase = document.getElementById("lowercase").checked;
+  const number = document.getElementById("number").checked;
+  const symbol = document.getElementById("symbol").checked;
+
+  // Regular expressions for each field
+  const nameRegex = /^[a-zA-Z]+ [a-zA-Z]+<span class="math-inline">/; // Name with first and last name \(can be improved\)
+const emailRegex \= /^\[a\-zA\-Z0\-9\.\_\-\]\+@\[a\-zA\-Z0\-9\.\-\]\+\\\.\[a\-zA\-Z\]\{2,4\}</span>/;
+  const phoneRegex = /^\d{3}-\d{3}-\d{4}<span class="math-inline">/; // US phone number format \(can be adjusted\)
+const ageRegex \= /^\\d\+</span>/; // Positive integer
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~<span class="math-inline">%^&\]\)\[0\-9a\-zA\-Z@\!\#\~</span>%^&]{8,}$/; // At least 8 characters with required formats
+
+  // Clear any previous error messages
+  clearErrorMessages();
+
+  // Validation checks
+  let isValid = true;
+  if (!nameRegex.test(name)) {
+    showError("name-error", "Please enter a valid name (first and last)");
+    isValid = false;
+  }
+  if (!emailRegex.test(email)) {
+    showError("email-error", "Please enter a valid email address");
+    isValid = false;
+  }
+  if (!phoneRegex.test(phone)) {
+    showError("phone-error", "Please enter a valid phone number (XXX-XXX-XXXX)");
+    isValid = false;
+  }
+  if (!ageRegex.test(age) || age < 13) { // Age must be a positive integer and at least 13
+    showError("age-error", "Please enter a valid age (must be 13 or older)");
+    isValid = false;
+  }
+  if (gender === "") {
+    showError("gender-error", "Please select your gender");
+    isValid = false;
+  }
+  if (!passwordRegex.test(password)) {
+    showError("password-error", "Password must be at least 8 characters and include uppercase, lowercase, number, and special symbol");
+    isValid = false;
+  } else if (!uppercase || !lowercase || !number || !symbol) {
+    showError("password-error", "Password must include uppercase, lowercase, number, and special symbol");
+    isValid = false;
+  }
+
+  // Show success message or prevent form submission
+  if (isValid) {
+    alert("Account created successfully!");
+    // ... (Your form submission logic or redirect to another page)
+    return true; // Allow form submission
+  } else {
+    return false; // Prevent form submission
+  }
+}
+
+// Function to show an error message below a specific field
+function showError(errorId, message) {
+  const errorSpan = document.getElementById(errorId);
+  errorSpan.textContent = message;
+}
+
+// Function to clear all error messages
+function clearErrorMessages() {
+  const errorSpans = document.querySelectorAll(".error");
+  errorSpans.forEach(span => span.textContent = "");
+}
+
+// Event listener for password criteria checkboxes (unchanged)
+document.addEventListener("keyup", function () {
+  const password = document.getElementById("password");
+  const uppercaseCheckbox = document.getElementById("uppercase");
+  const lowercaseCheckbox = document.getElementById("lowercase");
+  const numberCheckbox = document.getElementById("number");
+  const symbolCheckbox = document.getElementById("symbol");
+
+  var hasUppercase = /[A-Z]/.test(password.value);
+  var hasLowercase = /[a-z]/.test(password.value);
+  var hasNumber = /\d/.test
+
+  </script>
 </body>
 </html>

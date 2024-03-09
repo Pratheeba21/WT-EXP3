@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <title>Contact Us</title>
+    <title>Sign up</title>
     <style>
       body {
         background-color: whitesmoke;
@@ -18,17 +14,17 @@
       }
 
       .cd {
-        width: 500px;
-        height: 600px; 
+        width: 550px;
+        height: 900px;
         background-color: cornsilk;
         text-align: center;
         margin: 45px auto;
         font-family: Calibri;
         border-radius: 30px;
-        padding: 20px; 
-        display: flex; 
-        flex-direction: column; 
-        justify-content: space-between; 
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         font-size: 21px;
         color: chocolate;
         border-radius: 20px;
@@ -38,7 +34,10 @@
 
       #a1,
       #b,
-      #c {
+      #c,
+      #bc,
+      #bb,
+      #be {
         border-radius: 10px;
         padding-bottom: 10px;
         width: 250px;
@@ -48,13 +47,13 @@
       }
       #d {
         color: rgb(255, 255, 255);
-        font-size: 19px;
+        font-size: 20px;
         width: 120px;
         height: 40px;
         line-height: 16px;
         padding: 4px;
         border-radius: 20px;
-        font-family: Georgia, serif;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         font-weight: normal;
         text-decoration: none;
         font-style: normal;
@@ -66,13 +65,13 @@
           rgb(100, 94, 11) 50%,
           rgb(92, 87, 14) 100%
         );
-        box-shadow: rgb(0, 0, 0) 5px 5px 15px 3px;
+        box-shadow: rgba(0, 0, 0, 0.884) 5px 5px 15px 3px;
         border: 2px solid rgb(95, 89, 6);
         display: inline-block;
       }
 
       #d:hover {
-        background: rgb(95, 89, 6);
+        background: rgb(255, 239, 22);
       }
 
       #d:active {
@@ -85,7 +84,7 @@
       }
 
       span {
-        margin-top: 0; 
+        margin-top: 0;
         font-size: 20px;
       }
       label {
@@ -94,65 +93,204 @@
       input {
         margin-right: -50px;
       }
-
+      p {
+        margin-top: 90px;
+        font-size: 20px;
+      }
+      #e {
+        text-decoration: none;
+        color: rgb(95, 89, 6);
+        margin-top: 0px;
+        font-size: 20px;
+      }
+      #bt {
+        margin-top: -50px;
+        margin-bottom: 40px;
+      }
+      #cc {
+        color: chocolate;
+        text-shadow: #868686;
+      }
       .password-criteria {
         display: none;
+      }
+      .password-criteria input[type="checkbox"] {
+        margin-right: 5px;
       }
     </style>
   </head>
   <body>
     <div class="cd">
       <h1>Create an account</h1>
-      <form id="contactForm">
-        <label for="name"
-          >Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
-        >
-        <input type="text" id="b" name="name" required /><br />
-        <label for="email">Email Address:&nbsp;&nbsp;</label>
-        <input type="email" id="b" name="email" required /><br />
-        <label for="phone"
-          >Telephone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
-        >
-        <input type="tel" id="b" name="phone" required /><br />
-        <label for="age"
-          >Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
-        >
-        <input type="text" id="b" name="age" required /><br />
-        <label for="password"
-          >Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
-        >
-        <input type="password" id="c" name="password" required /><br />
-        <label for="gender"
-          >Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
-        >
-        <input type="text" id="b" name="gender" /><br /><br />
-        <button type="submit" class="submit-button" id="d">Sign up</button>
+      <form id="signupform">
+        <div>
+          <label for="a1"
+            >Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+          >
+          <input
+            type="text"
+            id="a1"
+            name="name"
+            autocomplete="on"
+            required
+          /><br />
+          <span id="alt1"></span>
+        </div>
+        <br />
+        <div>
+          <label for="b">Email Address:&nbsp;&nbsp;</label>
+          <input
+            type="text"
+            id="b"
+            name="email"
+            autocomplete="on"
+            required
+          /><br />
+          <span id="alt2"></span>
+        </div>
+        <br />
+        <div>
+          <label for="bb"
+            >Telephone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+          >
+          <input
+            type="text"
+            id="bb"
+            name="phone"
+            autocomplete="on"
+            required
+          /><br />
+          <span id="alt3"></span>
+        </div>
+        <br />
+        <div>
+          <label for="bc"
+            >Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+          >
+          <input type="text" id="bc" name="age" required /><br />
+          <span id="alt4"></span>
+        </div>
+        <br />
+        <div>
+          <label for="be"
+            >Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+              list="cc"
+              id="be"
+              name="gender"
+              required
+          /></label>
+          <br />
+          <datalist id="cc">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </datalist>
+          <span id="alt6"></span>
+        </div>
+        <br />
+        <div>
+          <label for="c"
+            >Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+          >
+          <input type="password" id="c" onkeyup="checkboxes()" required />
+          <div class="password-criteria">
+            <input type="checkbox" id="uppercase" /> Uppercase letter<br />
+            <input type="checkbox" id="lowercase" /> Lowercase letter<br />
+            <input type="checkbox" id="number" /> Number<br />
+            <input type="checkbox" id="symbol" /> Special symbol (@, !, $, %,
+            etc.)<br />
+          </div>
+          <span id="alt5"></span>
+        </div>
+        <br /><br />
+        <div>
+          <button id="d" onclick="validate()">Sign up</button>
+        </div>
+        <br />
       </form>
+      <div id="bt">
+        <p><a href="lg3.html" id="e">Go back to login</a></p>
+      </div>
     </div>
     <script>
-      function showPasswordCriteria() {
+      function checkboxes() {
         var password = document.getElementById("c");
-        var uppercaseCheckbox = document.getElementById("uppercase");
-        var lowercaseCheckbox = document.getElementById("lowercase");
-        var numberCheckbox = document.getElementById("number");
-        var symbolCheckbox = document.getElementById("symbol");
+        var uppercase = document.getElementById("uppercase");
+        var lowercase = document.getElementById("lowercase");
+        var number = document.getElementById("number");
+        var symbol = document.getElementById("symbol");
+        var uc = /[A-Z]/.test(password.value);
+        var lc = /[a-z]/.test(password.value);
+        var num = /\d/.test(password.value);
+        var sym = /[^\w\s]/.test(password.value);
 
-        var hasUppercase = /[A-Z]/.test(password.value);
-        var hasLowercase = /[a-z]/.test(password.value);
-        var hasNumber = /\d/.test(password.value);
-        var hasSymbol = /[^\w\s]/.test(password.value);
+        uppercase.checked = uc;
+        lowercase.checked = lc;
+        number.checked = num;
+        symbol.checked = sym;
 
-        uppercaseCheckbox.checked = hasUppercase;
-        lowercaseCheckbox.checked = hasLowercase;
-        numberCheckbox.checked = hasNumber;
-        symbolCheckbox.checked = hasSymbol;
-
-        var passwordCriteria =
+        var passwordcriteria =
           document.getElementsByClassName("password-criteria")[0];
         if (password.value.length > 0) {
-          passwordCriteria.style.display = "block";
+          passwordcriteria.style.display = "block";
         } else {
-          passwordCriteria.style.display = "none";
+          passwordcriteria.style.display = "none";
+        }
+      }
+      function validate() {
+        const username = document.getElementById("a1").value;
+        const email = document.getElementById("b").value;
+        const password = document.getElementById("c").value;
+        const age = document.getElementById("bc").value;
+        const phone = document.getElementById("bb").value;
+        const gender = document.getElementById("be").value;
+        var usernameRegex = /^[a-zA-Z._]+$/;
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        var passwordRegex =
+          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
+        var ageRegex = /^\d+$/;
+        var phoneRegex = /^\d{10}$/;
+        if (
+          username.match(usernameRegex) != null &&
+          email.match(emailRegex) != null &&
+          password.match(passwordRegex) != null &&
+          age.match(ageRegex) != null &&
+          phone.match(phoneRegex) != null &&
+          gender !== ""
+        ) {
+          alert("Account created successfully! Welcome " + username);
+          return;
+        } else if (
+          username.match(usernameRegex) == null &&
+          email.match(emailRegex) == null &&
+          password.match(passwordRegex) == null &&
+          age.match(ageRegex) == null &&
+          phone.match(phoneRegex) == null
+        ) {
+          alert("Please enter a valid values for all the fields");
+          return;
+        } else {
+          if (username.match(usernameRegex) == null && username !== "") {
+            document.getElementById("alt1").innerHTML =
+              "Please enter a valid username";
+          }
+          if (email.match(emailRegex) == null && email !== "") {
+            document.getElementById("alt2").innerHTML =
+              "Please enter a valid email";
+          }
+          if (password.match(passwordRegex) == null && password !== "") {
+            document.getElementById("alt5").innerHTML =
+              "Please enter a valid password";
+          }
+          if (age.match(ageRegex) == null && age !== "") {
+            document.getElementById("alt4").innerHTML =
+              "Please enter a valid age";
+          }
+          if (phone.match(phoneRegex) == null && phone !== "") {
+            document.getElementById("alt3").innerHTML =
+              "Please enter a valid phone no";
+          }
         }
       }
     </script>
