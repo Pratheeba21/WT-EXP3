@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Sign Up Option</title>
+    <style>
+        body {
+            background-color: cornsilk;
+        }
+
+        .cd {
+            width: 300px;
+            height: 400px;
+            background-color: blueviolet;
+            text-align: center;
+            margin-left: 45px;
+            font-family: Calibri;
+            border-radius: 30px;
+            box-shadow: 8px solid grey;
+            padding-bottom: 150px;
+            margin-bottom: 130px;
+            font-size: 18px;
+        }
+
+        #a1, #b, #c {
+            border-radius: 20px;
+            padding-bottom: 10px;
+            width: 200px;        
+        }
+
+        #d {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            border-color: none;
+            height: 30px;
+            width: 80px;
+            font-size: 15px;
+        }
+
+        #e {
+            text-decoration: none;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="cd">
+    <h1>Login to your account</h1>
+    <form id="loginForm">
+        <label>Username</label><br><input type="text" id="a1"><br>
+        <label>Email id</label><br><input type="text" id="b"><br>
+        <label>Password</label><br><input type="text" id="c"><br>
+        <button type="submit" id="d">Login</button><br>
+    </form>
+    <a href="#" id="e">Sign up</a>
+</div>
+<script>
+        function regex() {
+            var a1=document.getElementById("a1").value;
+            var b=document.getElementById("b").value;
+            var c=document.getElementById("c").value;
+            var p1=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var p2=/^[._a-zA-Z0-9]*$/;
+            var p3=/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+            if((a1.match(p1))!=null && (b.match(p2))!=null && (c.match(p3))!=null)
+            {
+                alert("successfully logged in");
+            }
+            else if((a1.match(p1))==null && (b.match(p2))==null && (c.match(p3))==null)
+            {
+                alert("username and Email does not match the pattern");
+            }
+            else
+            {
+                if((a1.match(p1))==null)
+                {
+                    alert("Email does not match the pattern");
+                }
+                else if((b.match(p2))==null)
+                {
+                    alert("username does not match the pattern"); 
+                }
+                else if((c.match(p3))==null)
+                {
+                    alert("password does not match the pattern"); 
+                }
+            }
+     </script>
+ </body>
+</html>

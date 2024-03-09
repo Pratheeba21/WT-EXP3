@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<style>
+     body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+     .container {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 5px;
+      width: 500px;
+      margin: 0 auto;
+    }
+    label {
+     display: block;
+     margin-bottom: 5px;
+    }
+    input[type="text"],
+    textarea {
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 3px;
+     box-sizing: border-box;
+     margin-bottom: 15px;
+    }
+    textarea {
+     height: 150px;
+    }
+    .submit-button {
+     background-color: #4CAF50; /* Green */
+     border: none;
+     color: white;
+     padding: 10px 20px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 10px;
+     cursor: pointer;
+     border-radius: 5px;
+    }
+    .submit-button:hover {
+     background-color: #45a049;
+    }
+ </style>
+</head>
+<body>
+ <div class="container">
+  <h1>Contact Us</h1>
+  <form action="/submit_form" method="post"> <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="phone">Telephone:</label>
+    <input type="tel" id="phone" name="phone" required>
+    <label for="enquiry">Enquiry:</label>
+    <input type="text" id="enquiry" name="enquiry" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <label for="additional">Additional Information (Optional):</label>
+    <input type="text" id="additional" name="additional">
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+ </div>
+</body>
+</html>

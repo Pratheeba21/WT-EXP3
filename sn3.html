@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Contact Us</title>
+    <style>
+      body {
+        background-color: whitesmoke;
+        font-weight: bold;
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .cd {
+        width: 500px;
+        height: 600px; 
+        background-color: cornsilk;
+        text-align: center;
+        margin: 45px auto;
+        font-family: Calibri;
+        border-radius: 30px;
+        padding: 20px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        font-size: 21px;
+        color: chocolate;
+        border-radius: 20px;
+        background: cornsilk;
+        box-shadow: -50px 50px 67px #868686, 50px -50px 67px #868686;
+      }
+
+      #a1,
+      #b,
+      #c {
+        border-radius: 10px;
+        padding-bottom: 10px;
+        width: 250px;
+        height: 22px;
+        border-color: #b16610;
+        margin-bottom: 25px;
+      }
+      #d {
+        color: rgb(255, 255, 255);
+        font-size: 19px;
+        width: 120px;
+        height: 40px;
+        line-height: 16px;
+        padding: 4px;
+        border-radius: 20px;
+        font-family: Georgia, serif;
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        background-image: linear-gradient(
+          to right,
+          rgb(95, 89, 6) 0%,
+          rgb(100, 94, 11) 50%,
+          rgb(92, 87, 14) 100%
+        );
+        box-shadow: rgb(0, 0, 0) 5px 5px 15px 3px;
+        border: 2px solid rgb(95, 89, 6);
+        display: inline-block;
+      }
+
+      #d:hover {
+        background: rgb(95, 89, 6);
+      }
+
+      #d:active {
+        background: rgb(95, 89, 6);
+      }
+
+      h1 {
+        color: chocolate;
+        text-shadow: 2px 2px 2px rgb(95, 89, 6);
+      }
+
+      span {
+        margin-top: 0; 
+        font-size: 20px;
+      }
+      label {
+        margin-left: -40px;
+      }
+      input {
+        margin-right: -50px;
+      }
+
+      .password-criteria {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cd">
+      <h1>Create an account</h1>
+      <form id="contactForm">
+        <label for="name"
+          >Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <input type="text" id="b" name="name" required /><br />
+        <label for="email">Email Address:&nbsp;&nbsp;</label>
+        <input type="email" id="b" name="email" required /><br />
+        <label for="phone"
+          >Telephone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <input type="tel" id="b" name="phone" required /><br />
+        <label for="age"
+          >Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <input type="text" id="b" name="age" required /><br />
+        <label for="password"
+          >Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <input type="password" id="c" name="password" required /><br />
+        <label for="gender"
+          >Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <input type="text" id="b" name="gender" /><br /><br />
+        <button type="submit" class="submit-button" id="d">Sign up</button>
+      </form>
+    </div>
+    <script>
+      function showPasswordCriteria() {
+        var password = document.getElementById("c");
+        var uppercaseCheckbox = document.getElementById("uppercase");
+        var lowercaseCheckbox = document.getElementById("lowercase");
+        var numberCheckbox = document.getElementById("number");
+        var symbolCheckbox = document.getElementById("symbol");
+
+        var hasUppercase = /[A-Z]/.test(password.value);
+        var hasLowercase = /[a-z]/.test(password.value);
+        var hasNumber = /\d/.test(password.value);
+        var hasSymbol = /[^\w\s]/.test(password.value);
+
+        uppercaseCheckbox.checked = hasUppercase;
+        lowercaseCheckbox.checked = hasLowercase;
+        numberCheckbox.checked = hasNumber;
+        symbolCheckbox.checked = hasSymbol;
+
+        var passwordCriteria =
+          document.getElementsByClassName("password-criteria")[0];
+        if (password.value.length > 0) {
+          passwordCriteria.style.display = "block";
+        } else {
+          passwordCriteria.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
