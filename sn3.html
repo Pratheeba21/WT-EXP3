@@ -251,27 +251,7 @@
           /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
         var ageRegex = /^\d+$/;
         var phoneRegex = /^\d{10}$/;
-        if (
-          username.match(usernameRegex) != null &&
-          email.match(emailRegex) != null &&
-          password.match(passwordRegex) != null &&
-          age.match(ageRegex) != null &&
-          phone.match(phoneRegex) != null &&
-          gender !== ""
-        ) {
-          alert("Account created successfully! Welcome " + username);
-          return;
-        } else if (
-          username.match(usernameRegex) == null &&
-          email.match(emailRegex) == null &&
-          password.match(passwordRegex) == null &&
-          age.match(ageRegex) == null &&
-          phone.match(phoneRegex) == null
-        ) {
-          alert("Please enter a valid values for all the fields");
-          return;
-        } else {
-          if (username.match(usernameRegex) == null && username !== "") {
+         if (username.match(usernameRegex) == null && username !== "") {
             document.getElementById("alt1").innerHTML =
               "Please enter a valid username";
           }
@@ -291,7 +271,21 @@
             document.getElementById("alt3").innerHTML =
               "Please enter a valid phone no";
           }
+        if (username.match(usernameRegex) != null && email.match(emailRegex) != null && password.match(passwordRegex) != null && age.match(ageRegex) != null && phone.match(phoneRegex) != null && gender !== "") {
+          alert("Account created successfully! Welcome " + username);
+          return;
+        } else if (
+          username.match(usernameRegex) == null &&
+          email.match(emailRegex) == null &&
+          password.match(passwordRegex) == null &&
+          age.match(ageRegex) == null &&
+          phone.match(phoneRegex) == null
+        ) {
+          alert("Please enter a valid values for all the fields");
+          return;
         }
+         
+        
       }
     </script>
   </body>
