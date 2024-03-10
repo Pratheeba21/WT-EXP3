@@ -8,105 +8,124 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Login with Sign Up Option</title>
-    <style>
-      body {
-        background-color: whitesmoke;
-        font-weight: bold;
-        background-image: url("bg.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .cd {
-        width: 500px;
-        height: 700px;
-        background-color: cornsilk;
-        text-align: center;
-        margin: 45px auto;
-        font-family: Calibri;
-        border-radius: 30px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        font-size: 21px;
-        color: chocolate;
-        border-radius: 20px;
-        background: cornsilk;
-        box-shadow: -50px 50px 67px #868686, 50px -50px 67px #868686;
-      }
-      #a1,
-      #b,
-      #c {
-        border-radius: 10px;
-        padding-bottom: 10px;
-        width: 250px;
-        height: 22px;
-        border-color: #b16610;
-      }
-      #d {
-        color: rgb(255, 255, 255);
-        font-size: 20px;
-        width: 120px;
-        height: 40px;
-        line-height: 16px;
-        padding: 4px;
-        border-radius: 20px;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        font-weight: normal;
-        text-decoration: none;
-        font-style: normal;
-        font-variant: normal;
-        text-transform: none;
-        background-image: linear-gradient(
-          to right,
-          rgb(95, 89, 6) 0%,
-          rgb(100, 94, 11) 50%,
-          rgb(92, 87, 14) 100%
-        );
-        box-shadow: rgba(0, 0, 0, 0.877) 5px 5px 15px 3px;
-        border: 2px solid rgb(95, 89, 6);
-        display: inline-block;
-      }
-      #d:hover {
-        background: rgb(255, 239, 22);
-      }
-      #d:active {
-        background: rgb(95, 89, 6);
-      }
-      #e {
-        text-decoration: none;
-        color: rgb(95, 89, 6);
-        margin-top: 0px;
-        font-size: 20px;
-      }
-      h1 {
-        color: chocolate;
-        text-shadow: 2px 2px 2px rgb(95, 89, 6);
-      }
-      span {
-        margin-top: 90px;
-        font-size: 20px;
-      }
-      .password-criteria {
-        display: none;
-        margin-bottom: ;
-      }
-
-      .password-criteria input[type="checkbox"] {
-        margin-right: 5px;
-      }
-      #loginForm {
-        margin-top: 50px;
-      }
-      #bt {
-        margin-top: 50px;
-        margin-bottom: 40px;
-      }
-      #alt1,#alt2,#alt3{
-        color: red;
-      }
-    </style>
+      <style>
+         body {
+              font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+              background-image: url("https://img.freepik.com/free-vector/gradient-blue-background_52683-83113.jpg?w=740&t=st=1710062689~exp=1710063289~hmac=ef99322cdbb37e0f65eb92bc2f73b7ffe8fcad54e8960df5979889de683874a3");
+              background-size: cover;
+              background-position: center;
+              background-attachment: fixed; /* Keep image fixed on scroll */
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 100vh;
+              font-size: 20px;
+              
+            }
+            #a1,#b,#c{
+              color: rgb(31, 18, 207);
+              font-size: 20px;
+              font-weight: bold;
+            }
+        
+            h1 {
+              color: #150c92; /* Colorful text */
+              font-size: 36px; /* Larger heading */
+              margin-bottom: 20px;
+              text-shadow: 2px 2px 2px rgba(2, 114, 108, 0.979);
+              font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Display font for heading */
+            }
+        
+    
+        .cd {
+           background-color: rgba(255, 255, 255, 0.8); 
+          border-radius: 10px;
+          box-shadow: 17px 16px 20px rgba(0, 0, 0, 0.918);
+          width: 450px;
+          padding: 30px;
+          text-align: center;
+        }
+    
+    
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-size: 20px;
+          color: #1f3bb9;
+          font-weight: bold;
+        }
+    
+        input[type="text"],
+        input[type="password"] {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-bottom: 15px;
+          font-size: 16px;
+        }
+    
+        .fa-solid {
+          margin-right: 10px;
+          color: #999; /* Muted icon color */
+        }
+    
+        #d {
+              background-color: #4CAF50; /* Green login button */
+              color: #fff;
+              padding: 15px 30px; /* Increase width and height */
+              border: none;
+              border-radius: 20px;
+              cursor: pointer;
+              font-size: 20px;
+              transition: 0.3s ease-in-out;
+              /* Center button horizontally */
+              margin: 0 auto;
+              box-shadow: rgba(0, 0, 0, 0.548) 5px 5px 15px 3px;
+                      border: 2px solid rgba(179, 168, 16, 0.288);
+            }
+        
+            #d:hover {
+              background-color: #3e8e41;
+            }
+    
+        #e {
+          color: #150c92;;
+          text-decoration: none;
+          font-size: 20px;
+          transition: 0.3s ease-in-out;
+        }
+    
+        #e:hover {
+          color: #4CAF50;
+        }
+    
+        .error {
+          color: red;
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+    
+        .password-criteria {
+          display: none;
+          margin-bottom: 10px;
+        }
+    
+        .password-criteria input[type="checkbox"] {
+          margin-right: 5px;
+        }
+    
+        #loginform {
+          margin-top: 20px;
+        }
+    
+        #bt {
+          margin-top: 15px;
+          font-size: 20px;
+        }
+        </style>
   </head>
   <body>
     <div class="cd">

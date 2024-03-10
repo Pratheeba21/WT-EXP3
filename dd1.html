@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Sign up</title>
+    <style>
+                 body {
+                      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                      background-image: url("https://img.freepik.com/free-vector/gradient-blue-background_52683-83113.jpg?w=740&t=st=1710062689~exp=1710063289~hmac=ef99322cdbb37e0f65eb92bc2f73b7ffe8fcad54e8960df5979889de683874a3");
+                      background-size: cover;
+                      background-position: center;
+                      background-attachment: fixed; 
+                      margin: 0;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      min-height: 100vh;
+                      font-size: 20px;
+                      
+                    }
+                    #a1,#b,#c,#bc,#bb{
+                      color: rgb(31, 18, 207);
+                      font-size: 20px;
+                      font-weight: bold;
+                      width: 300px;
+                    }
+
+                      #be {
+                           
+                            padding-bottom: 10px;
+                            width: 300px;
+                            height: 33px;
+                           
+                            margin-bottom: 25px;
+                          }
+                    #cc {
+                            color: chocolate;
+                            text-shadow: #868686;
+                          }
+                
+                    h1 {
+                      color: #150c92; 
+                      font-size: 39px; 
+                      margin-bottom: 70px;
+                      text-shadow: 2px 2px 2px rgba(2, 114, 108, 0.979);
+                      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+                    }
+                
+            
+                .cd {
+                   background-color: rgba(255, 248, 220, 0.719); 
+                  border-radius: 20px;
+                  box-shadow: 17px 16px 20px rgba(0, 0, 0, 0.918);
+                  width: 550px;
+                  padding: 30px;
+                  text-align: center;
+                  
+                }
+            
+            
+                label {
+                  display: block;
+                  margin-bottom: 5px;
+                  font-size: 24px;
+                  color: #1f3bb9;
+                  font-weight: bold;
+                }
+            
+                input[type="text"],
+                input[type="password"] {
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  box-sizing: border-box;
+                  margin-bottom: 15px;
+                  font-size: 16px;
+                }
+            
+                .fa-solid {
+                  margin-right: 0px;
+                  color: #999; 
+                }
+            
+                #d {
+                      background-color: #4CAF50; 
+                      color: #fff;
+                      padding: 15px 30px; 
+                      border: none;
+                      border-radius: 20px;
+                      cursor: pointer;
+                      font-size: 20px;
+                      transition: 0.3s ease-in-out;
+                      margin: 0 auto;
+                      box-shadow: rgba(0, 0, 0, 0.548) 5px 5px 15px 3px;
+                              border: 2px solid rgba(179, 168, 16, 0.288);
+                    }
+                
+                    #d:hover {
+                      background-color: #3e8e41;
+                    }
+            
+                #e {
+                  color: #150c92;;
+                  text-decoration: none;
+                  font-size: 22px;
+                  transition: 0.3s ease-in-out;
+                }
+            
+                #e:hover {
+                  color: #b91a0e;
+                }
+            
+                .error {
+                  color: red;
+                  font-size: 12px;
+                  margin-bottom: 10px;
+                }
+            
+                .password-criteria {
+                  display: none;
+                  margin-bottom: 10px;
+                  color: #0a630d;
+                }
+            
+                .password-criteria input[type="checkbox"] {
+                  margin-right: 5px;
+                }
+            
+                #loginform {
+                  margin-top: 20px;
+                }
+            
+                #bt {
+                  margin-top: 15px;
+                  font-size: 22px;
+                }
+                #alt1,#alt2,#alt3,#alt4,#alt5,#alt6{
+                        color: red;
+                      }
+                       #ns{
+                                          display: flex;
+                                          margin-left: 200px;
+                                        }
+                </style>
+  </head>
+  <body>
+    <div class="cd">
+      <h1>Create an account</h1>
+      <form id="signupform" onsubmit="return validate()">
+        <div>
+            <div id="ns"><i class="fa-solid fa-user" style="color: black"></i>&nbsp;
+          <label for="a1"
+            >Username</label
+          ></div>
+          <input
+            type="text"
+            id="a1"
+            name="name"
+            autocomplete="on"
+            required
+          /><br />
+          <span id="alt1"></span>
+        </div>
+        <br />
+        <div>
+            <div id="ns"><i class="fa-solid fa-envelope" style="color: black"></i>&nbsp;
+          <label for="b">Email Address</label></div>
+          <input
+            type="text"
+            id="b"
+            name="email"
+            autocomplete="on"
+            required
+          /><br />
+          <span id="alt2"></span>
+        </div>
+        <br />
+        <div>
+            <div id="ns"><i class="fa-solid fa-phone-volume" style="color: black"></i>&nbsp;
+          <label for="bb"
+            >Telephone</label
+          ></div>
+          <input
+            type="text"
+            id="bb"
+            name="phone"
+            autocomplete="on"
+            required
+          /><br />
+          <span id="alt3"></span>
+        </div>
+        <br />
+        <div>
+            <div id="ns"><i class="fa-solid fa-image-portrait" style="color: black"></i>&nbsp;
+          <label for="bc"
+            >Age</label
+          ></div>
+          <input type="text" id="bc" name="age" required /><br />
+          <span id="alt4"></span>
+        </div>
+        <br />
+        <div>
+            <div id="ns"><i class="fa-solid fa-venus-mars" style="color: black"></i>&nbsp;
+          <label for="be"
+            >Gender<br></div><input
+              list="cc"
+              id="be"
+              name="gender"
+              required
+          /></label>
+          <br />
+          <datalist id="cc">
+            <option value="">Select Gender</option>
+            <option value="Male" class="fa-solid fa-person-half-dress"></option>
+                <option value="Female" class="fa-icon fas fa-venus"></option>
+                <option value="Others" class="fa-icon fas fa-genderless"></option>
+          </datalist>
+          <span id="alt6"></span>
+        </div>
+        
+        <div>
+            <div id="ns"><i class="fa-solid fa-lock" style="color: black"></i>&nbsp;
+          <label for="c"
+            >Password</label
+          ></div>
+          <input type="password" id="c" onkeyup="checkboxes()" required />
+          <div class="password-criteria">
+            <input type="checkbox" id="uppercase" /> Uppercase letter<br />
+            <input type="checkbox" id="lowercase" /> Lowercase letter<br />
+            <input type="checkbox" id="number" /> Number<br />
+            <input type="checkbox" id="symbol" /> Special symbol (@, !, $, %,
+            etc.)<br />
+          </div>
+          <span id="alt5"></span>
+        </div>
+        <br /><br />
+        <div>
+          <button id="d" onclick="validate()">Sign up</button>
+        </div>
+        <br />
+      </form>
+      <div id="bt">
+        <p><a href="gg1.html" id="e">Go back to login</a></p>
+      </div>
+    </div>
+    <script>
+      function checkboxes() {
+        var password = document.getElementById("c");
+        var uppercase = document.getElementById("uppercase");
+        var lowercase = document.getElementById("lowercase");
+        var number = document.getElementById("number");
+        var symbol = document.getElementById("symbol");
+        var uc = /[A-Z]/.test(password.value);
+        var lc = /[a-z]/.test(password.value);
+        var num = /\d/.test(password.value);
+        var sym = /[^\w\s]/.test(password.value);
+
+        uppercase.checked = uc;
+        lowercase.checked = lc;
+        number.checked = num;
+        symbol.checked = sym;
+
+        var passwordcriteria =
+          document.getElementsByClassName("password-criteria")[0];
+        if (password.value.length > 0) {
+          passwordcriteria.style.display = "block";
+        } else {
+          passwordcriteria.style.display = "none";
+        }
+      }
+function validate() {
+  const username = document.getElementById("a1").value.trim(); 
+  const email = document.getElementById("b").value.trim();
+  const password = document.getElementById("c").value.trim();
+  const age = document.getElementById("bc").value.trim();
+  const phone = document.getElementById("bb").value.trim();
+  const gender = document.getElementById("be").value.trim();
+
+  var usernameRegex = /^[a-zA-Z._]+$/;
+  var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
+  var ageRegex = /^\d+$/;
+  var phoneRegex = /^\d{10}$/;
+
+  let hasError = false; 
+
+  
+  document.getElementById("alt1").innerHTML = "";
+  document.getElementById("alt2").innerHTML = "";
+  document.getElementById("alt3").innerHTML = "";
+  document.getElementById("alt4").innerHTML = "";
+  document.getElementById("alt5").innerHTML = "";
+  document.getElementById("be").style.border = ""; 
+
+ 
+  if (username.match(usernameRegex) == null && username !== "") {
+    document.getElementById("alt1").innerHTML = "Please enter a valid username (letters, underscores, or periods only)";
+    hasError = true;
+  }
+  if (email.match(emailRegex) == null && email !== "") {
+    document.getElementById("alt2").innerHTML = "Please enter a valid email";
+    hasError = true;
+  }
+  if (password.match(passwordRegex) == null && password !== "") {
+    document.getElementById("alt5").innerHTML = "Please enter a strong password (minimum 8 characters, including a lowercase letter, an uppercase letter, a number, and a special symbol)";
+    hasError = true;
+  }
+  if (age.match(ageRegex) == null && age !== "") {
+    document.getElementById("alt4").innerHTML = "Please enter a valid age (numbers only)";
+    hasError = true;
+  }
+  if (phone.match(phoneRegex) == null && phone !== "") {
+    document.getElementById("alt3").innerHTML = "Please enter a valid 10-digit phone number";
+    hasError = true;
+  }
+  if (gender === "") {
+    document.getElementById("be").style.border = "1px solid red"; 
+    hasError = true;
+  }
+
+    
+        if (username === "" || email === "" || password === "") {
+          alert("Please fill in all the fields");
+          return false; 
+        }
+  
+  if (hasError) {
+    event.preventDefault(); 
+    return false; 
+  }
+
+
+  alert("Account created successfully! Welcome " + username); 
+  return true; 
+}
+      
+    </script>
+  </body>
+</html>
