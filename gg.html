@@ -158,7 +158,7 @@
       </form>
       <div id="bt">
         <span
-          >Don't have an account?&nbsp;<a href="sn3.html" id="e"
+          >Don't have an account?&nbsp;<a href="dd.html" id="e"
             >Sign up</a
           ></span
         >
@@ -189,44 +189,44 @@
           passwordcriteria.style.display = "none";
         }
       }
-      function validate() {
-        const username = document.getElementById("a1").value;
-        const email = document.getElementById("b").value;
-        const password = document.getElementById("c").value;
-        var usernameRegex = /^[a-zA-Z._]+$/;
-        var emailRegex =
-          /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+)@([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
-        var passwordRegex =
-          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
+function validate() {
+  const username = document.getElementById("a1").value.trim();
+  const email = document.getElementById("b").value.trim();
+  const password = document.getElementById("c").value.trim();
 
-        if (username.match(usernameRegex) == null && username !== "") {
-          document.getElementById("alt1").innerHTML =
-            "Please enter a valid username";
-        }
-        if (email.match(emailRegex) == null && email !== "") {
-          document.getElementById("alt2").innerHTML =
-            "Please enter a valid email";
-        }
-        if (password.match(passwordRegex) == null && password !== "") {
-          document.getElementById("alt3").innerHTML =
-            "Please enter a valid password";
-        }
-        if (
-          username.match(usernameRegex) != null &&
-          email.match(emailRegex) != null &&
-          password.match(passwordRegex) != null
-        ) {
-          alert("Login successful! Welcome " + username);
-          return;
-        } else if (
-          username.match(usernameRegex) == null &&
-          email.match(emailRegex) == null &&
-          password.match(passwordRegex) == null
-        ) {
-          alert("Please enter a valid values for all the fields");
-          return;
-        }
-      }
+  var usernameRegex = /^[a-zA-Z._]+$/;
+  var emailRegex = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+)@([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
+  var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
+
+  let hasError = false;
+  document.getElementById("alt1").innerHTML = "";
+  document.getElementById("alt2").innerHTML = "";
+  document.getElementById("alt3").innerHTML = "";
+
+  if (username.match(usernameRegex) == null && username !== "") {
+    document.getElementById("alt1").innerHTML = "Please enter a valid username (letters, underscores, or periods only)";
+    hasError = true;
+  }
+  if (email.match(emailRegex) == null && email !== "") {
+    document.getElementById("alt2").innerHTML = "Please enter a valid email";
+    hasError = true;
+  }
+  if (password.match(passwordRegex) == null && password !== "") {
+    document.getElementById("alt3").innerHTML = "Please enter a strong password (minimum 8 characters, including a lowercase letter, an uppercase letter, a number, and a special symbol)";
+    hasError = true;
+  }
+    if (username === "" || email === "" || password === "") {
+      alert("Please fill in all the fields");
+      return false; 
+
+  if (hasError) {
+    event.preventDefault(); 
+    return false; 
+  }
+
+  alert("Login successful! Welcome " + username); 
+  return true; 
+}
     </script>
   </body>
 </html>

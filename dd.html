@@ -120,8 +120,8 @@
       #alt1,
       #alt2,
       #alt3,
-      alt4,
-      alt5 {
+      #alt4,
+      #alt5 {
         color: red;
       }
     </style>
@@ -129,7 +129,7 @@
   <body>
     <div class="cd">
       <h1>Create an account</h1>
-      <form id="signupform">
+      <form id="signupform" onsubmit="return validate()">
         <div>
           <label for="a1"
             >Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
@@ -217,7 +217,7 @@
         <br />
       </form>
       <div id="bt">
-        <p><a href="lg3.html" id="e">Go back to login</a></p>
+        <p><a href="gg.html" id="e">Go back to login</a></p>
       </div>
     </div>
     <script>
@@ -245,60 +245,72 @@
           passwordcriteria.style.display = "none";
         }
       }
-      function validate() {
-        const username = document.getElementById("a1").value;
-        const email = document.getElementById("b").value;
-        const password = document.getElementById("c").value;
-        const age = document.getElementById("bc").value;
-        const phone = document.getElementById("bb").value;
-        const gender = document.getElementById("be").value;
-        var usernameRegex = /^[a-zA-Z._]+$/;
-        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        var passwordRegex =
-          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
-        var ageRegex = /^\d+$/;
-        var phoneRegex = /^\d{10}$/;
-        if (username.match(usernameRegex) == null && username !== "") {
-          document.getElementById("alt1").innerHTML =
-            "Please enter a valid username";
+function validate() {
+  const username = document.getElementById("a1").value.trim(); 
+  const email = document.getElementById("b").value.trim();
+  const password = document.getElementById("c").value.trim();
+  const age = document.getElementById("bc").value.trim();
+  const phone = document.getElementById("bb").value.trim();
+  const gender = document.getElementById("be").value.trim();
+
+  var usernameRegex = /^[a-zA-Z._]+$/;
+  var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
+  var ageRegex = /^\d+$/;
+  var phoneRegex = /^\d{10}$/;
+
+  let hasError = false; 
+
+  
+  document.getElementById("alt1").innerHTML = "";
+  document.getElementById("alt2").innerHTML = "";
+  document.getElementById("alt3").innerHTML = "";
+  document.getElementById("alt4").innerHTML = "";
+  document.getElementById("alt5").innerHTML = "";
+  document.getElementById("be").style.border = ""; 
+
+ 
+  if (username.match(usernameRegex) == null && username !== "") {
+    document.getElementById("alt1").innerHTML = "Please enter a valid username (letters, underscores, or periods only)";
+    hasError = true;
+  }
+  if (email.match(emailRegex) == null && email !== "") {
+    document.getElementById("alt2").innerHTML = "Please enter a valid email";
+    hasError = true;
+  }
+  if (password.match(passwordRegex) == null && password !== "") {
+    document.getElementById("alt5").innerHTML = "Please enter a strong password (minimum 8 characters, including a lowercase letter, an uppercase letter, a number, and a special symbol)";
+    hasError = true;
+  }
+  if (age.match(ageRegex) == null && age !== "") {
+    document.getElementById("alt4").innerHTML = "Please enter a valid age (numbers only)";
+    hasError = true;
+  }
+  if (phone.match(phoneRegex) == null && phone !== "") {
+    document.getElementById("alt3").innerHTML = "Please enter a valid 10-digit phone number";
+    hasError = true;
+  }
+  if (gender === "") {
+    document.getElementById("be").style.border = "1px solid red"; 
+    hasError = true;
+  }
+
+    
+        if (username === "" || email === "" || password === "") {
+          alert("Please fill in all the fields");
+          return false; 
         }
-        if (email.match(emailRegex) == null && email !== "") {
-          document.getElementById("alt2").innerHTML =
-            "Please enter a valid email";
-        }
-        if (password.match(passwordRegex) == null && password !== "") {
-          document.getElementById("alt5").innerHTML =
-            "Please enter a valid password";
-        }
-        if (age.match(ageRegex) == null && age !== "") {
-          document.getElementById("alt4").innerHTML =
-            "Please enter a valid age";
-        }
-        if (phone.match(phoneRegex) == null && phone !== "") {
-          document.getElementById("alt3").innerHTML =
-            "Please enter a valid phone no";
-        }
-        if (
-          username.match(usernameRegex) != null &&
-          email.match(emailRegex) != null &&
-          password.match(passwordRegex) != null &&
-          age.match(ageRegex) != null &&
-          phone.match(phoneRegex) != null &&
-          gender !== ""
-        ) {
-          alert("Account created successfully! Welcome " + username);
-          return;
-        } else if (
-          username.match(usernameRegex) == null &&
-          email.match(emailRegex) == null &&
-          password.match(passwordRegex) == null &&
-          age.match(ageRegex) == null &&
-          phone.match(phoneRegex) == null
-        ) {
-          alert("Please enter a valid values for all the fields");
-          return;
-        }
-      }
+  
+  if (hasError) {
+    event.preventDefault(); 
+    return false; 
+  }
+
+
+  alert("Account created successfully! Welcome " + username); 
+  return true; 
+}
+      
     </script>
   </body>
 </html>
