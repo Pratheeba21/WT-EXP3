@@ -199,10 +199,13 @@ function validate() {
   var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
 
   let hasError = false;
+
+  
   document.getElementById("alt1").innerHTML = "";
   document.getElementById("alt2").innerHTML = "";
   document.getElementById("alt3").innerHTML = "";
 
+ 
   if (username.match(usernameRegex) == null && username !== "") {
     document.getElementById("alt1").innerHTML = "Please enter a valid username (letters, underscores, or periods only)";
     hasError = true;
@@ -215,18 +218,25 @@ function validate() {
     document.getElementById("alt3").innerHTML = "Please enter a strong password (minimum 8 characters, including a lowercase letter, an uppercase letter, a number, and a special symbol)";
     hasError = true;
   }
+  
     if (username === "" || email === "" || password === "") {
       alert("Please fill in all the fields");
-      return false; 
+      return false; // Prevent further processing
+    }
 
+  
   if (hasError) {
     event.preventDefault(); 
     return false; 
   }
 
+  
   alert("Login successful! Welcome " + username); 
   return true; 
 }
+
+
+
     </script>
   </body>
 </html>
