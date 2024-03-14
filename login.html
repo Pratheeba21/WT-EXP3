@@ -29,6 +29,8 @@
         font-size: 18px;
         font-weight: bold;
         width: 300px;
+        border-color: #150c92;
+        border-width: 2px;
       }
       #b{
         height:42px;
@@ -189,7 +191,7 @@
       </form>
       <div id="bt">
         <span
-          >Don't have an account?&nbsp;<a href="dd1.html" id="e"
+          >Don't have an account?&nbsp;<a href="signup.html" id="e"
             >Sign up</a
           ></span
         >
@@ -227,7 +229,7 @@
 
         var usernameRegex = /^[a-zA-Z._]+$/;
         var emailRegex =
-          /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+)@([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
+          /^^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         var passwordRegex =
           /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
 
