@@ -229,7 +229,7 @@
 
         var usernameRegex = /^[a-zA-Z._]+$/;
         var emailRegex =
-          /^^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+          /^[a-z0-9.]+@[a-z0-9.]+\.[a-z]{2,4}$/;
         var passwordRegex =
           /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
 
@@ -246,7 +246,7 @@
         }
         if (email.match(emailRegex) == null && email !== "") {
           document.getElementById("alt2").innerHTML =
-            "Please enter a valid email";
+            "Please enter a valid email(letters(a-z),numbers,and periods only)";
           hasError = true;
         }
         if (password.match(passwordRegex) == null && password !== "") {

@@ -285,7 +285,7 @@
         const gender = document.getElementById("be").value.trim();
 
         var usernameRegex = /^[a-zA-Z._]+$/;
-        var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        var emailRegex = /^[a-z0-9.]+@[a-z0-9.]+\.[a-z]{2,4}$/;
         var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#~$%^&])[0-9a-zA-Z@!#~$%^&]{8,}$/;
         var ageRegex = /^(0?[1-9]|[1-9][0-9]|[1][0-9][0-9]|200)$/;
         var phoneRegex = /^\d{10}$/;
@@ -306,7 +306,7 @@
           hasError = true;
         }
         if (email.match(emailRegex) == null && email !== "") {
-          document.getElementById("alt2").innerHTML = "Please enter a valid email";
+          document.getElementById("alt2").innerHTML = "Please enter a valid email(letters(a-z),numbers,and periods only)";
           hasError = true;
         }
         if (password.match(passwordRegex) == null && password !== "") {
