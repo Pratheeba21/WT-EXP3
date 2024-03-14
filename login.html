@@ -173,7 +173,15 @@
             name="pw"
             onkeyup="checkboxes()"
             required
-          />
+          /><img src=
+                 "https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png"
+                 width="20px"
+                 height="20px"
+                 style=
+                     "display: inline; 
+                     margin-left: -5.0%; 
+                     vertical-align: middle"
+                 id="togglePassword">
           <div class="password-criteria">
             <input type="checkbox" id="uppercase" /> Uppercase letter<br />
             <input type="checkbox" id="lowercase" /> Lowercase letter<br />
@@ -198,6 +206,27 @@
       </div>
     </div>
     <script>
+       const togglePassword =
+                document.querySelector('#togglePassword');
+   
+          const password = 
+                document.querySelector('#c');
+   
+          togglePassword.
+          addEventListener('click', function (e) {
+              const type = password.getAttribute(
+                  'type') === 'password' ? 'text' : 'password';
+              password.setAttribute('type', type);
+  
+              if (togglePassword.src.match(
+  "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png")) {
+                  togglePassword.src =
+  "https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png";
+              } else {
+                  togglePassword.src =
+  "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png";
+              }
+          });
       function checkboxes() {
         var password = document.getElementById("c");
         var uppercase = document.getElementById("uppercase");
