@@ -61,7 +61,8 @@
       width: 550px;
       padding: 30px;
       text-align: center;
-      
+      margin-top: 70px;
+      margin-bottom: 70px;
     }
     
     
@@ -344,7 +345,7 @@
           hasError = true;
         }
         if (age.match(ageRegex) == null && age !== "") {
-          document.getElementById("alt4").innerHTML = "Please enter a valid age (numbers only)";
+          document.getElementById("alt4").innerHTML = "Please enter a valid age (numbers between 1-200 only)";
           hasError = true;
         }
         if (phone.match(phoneRegex) == null && phone !== "") {
